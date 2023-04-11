@@ -1,0 +1,90 @@
+array,a,=indexes,job array index values
+account,A,=name,charge job to specified account
+bb,,=<spec>,burst buffer specifications
+bbf,,=<file_name>,burst buffer specification file
+begin,b,=time,defer job until HH:MM MM/DD/YY
+comment,,=name,arbitrary comment
+cpu_freq,,=min[-max[:gov]],requested cpu frequency (and governor)
+cpus_per_task,c,=ncpus,number of cpus required per task
+dependency,d,=type:jobid[:time],defer job until condition on jobid is satisfied
+deadline,,=time,remove the job if no ending possible before\nthis deadline (start > (deadline - time[-min]))
+delay_boot,,=mins,delay boot for desired node features
+chdir,D,=directory,set working directory for batch script
+error,e,=err,file for batch script's standard error
+export,,[=names],specify environment variables to export
+export_file,,=file|fd,specify environment variables file or file\ndescriptor to export
+get_user_env,,,load environment from local cluster
+gid,,=group_id,group ID to run job as (user root only)
+gres,,=list,required generic resources
+gres_flags,,=opts,flags related to GRES management
+hold,H,,submit job in held state
+ignore_pbs,,,Ignore #PBS and #BSUB options in the batch script
+input,i,=in,file for batch script's standard input
+job_name,J,=jobname,name of job
+no_kill,k,,do not kill job on node failure
+licenses,L,=names,required license, comma separated
+clusters,M,=names,Comma separated list of clusters to issue\ncommands to.  Default is current cluster.\nName of 'all' will submit to run on all clusters.\nNOTE: SlurmDBD must up.
+container,,=<file_name>,Path to OCI container bundle
+distribution,m,=type,distribution method for processes to nodes\n(type = block|cyclic|arbitrary)
+mail_type,,=type,notify on state change: BEGIN, END, FAIL or ALL
+mail_user,,=user,who to send email notification for job state changes
+mcs_label,,=mcs,mcs label if mcs plugin mcs/group is used
+ntasks,n,=ntasks,number of tasks to run
+nice,,[=value],decrease scheduling priority by value
+no_requeue,,,if set, do not permit the job to be requeued
+ntasks_per_node,,=n,number of tasks to invoke on each node
+nodes,N,=N,number of nodes on which to run (N = min[-max])
+output,o,=out,file for batch script's standard output
+overcommit,O,,overcommit resources
+partition,p,=partition,partition requested
+parsable,,,outputs only the jobid and cluster name (if present),\nseparated by semicolon, only on successful submission.
+power,,=flags,power management options
+priority,,=value,set the priority of the job to value
+profile,,=value,enable acct_gather_profile for detailed data\nvalue is all or none or any combination of\nenergy, lustre, network or task
+propagate,,[=rlimits],propagate all [or specific list of] rlimits
+qos,q,=qos,quality of service
+quiet,Q,,quiet mode (suppress informational messages)
+reboot,,,reboot compute nodes before starting job
+requeue,,,if set, permit the job to be requeued
+oversubscribe,s,,over subscribe resources with other jobs
+core_spec,S,=cores,count of reserved cores
+signal,,=[[R][B]:]num[@time],send signal when time limit within time seconds
+spread_job,,,spread job across as many nodes as possible
+switches,,=max-switches{@max-time-to-wait},Optimum switches and max time to wait for optimum
+thread_spec,,=threads,count of reserved threads
+time,t,=minutes,time limit
+time_min,,=minutes,minimum time limit (if distinct)
+uid,,=user_id,user ID to run job as (user root only)
+use_min_nodes,,,if a range of node counts is given, prefer the smaller count
+verbose,v,,verbose mode (multiple -v's increase verbosity)
+wait,W,,wait for completion of submitted job
+wckey,,=wckey,wckey to run job under
+wrap,,=command string,wrap command string in a sh script and submit
+cluster_constraint,,=[!]list,specify a list of cluster constraints
+contiguous,,,demand a contiguous range of nodes
+constraint,C,=list,specify a list of constraints
+nodefile,F,=filename,request a specific list of hosts
+mem,,=MB,minimum amount of real memory
+mincpus,,=n,minimum number of logical processors (threads) per node
+reservation,,=name,allocate resources from named reservation
+tmp,,=MB,minimum amount of temporary disk
+nodelist,w,=hosts...,request a specific list of hosts
+exclude,x,=hosts...,exclude a specific list of hosts
+exclusive,,[=user]|[=mcs],allocate nodes in exclusive mode when\ncpu consumable resource is enabled\n(and mcs plugin is enabled)
+mem_per_cpu,,=MB,maximum amount of real memory per allocated\ncpu required by the job.\n--mem >= --mem-per-cpu if --mem is specified.
+sockets_per_node,,=S,number of sockets per node to allocate
+cores_per_socket,,=C,number of cores per socket to allocate
+threads_per_core,,=T,number of threads per core to allocate
+extra_node_info,B,=S[:C[:T]],combine request of sockets per node,\ncores per socket and threads per core.\nSpecify an asterisk (*) as a placeholder,\na minimum value, or a min-max range.
+ntasks_per_core,,=n,number of tasks to invoke on each core
+ntasks_per_socket,,=n,number of tasks to invoke on each socket
+hint,,=,Bind tasks according to application hints\n(see "--hint=help" for options)
+mem_bind,,=,Bind memory to locality domains (ldom)\n(see "--mem-bind=help" for options)
+cpus_per_gpu,,=n,number of CPUs required per allocated GPU
+gpus,G,=n,count of GPUs required for the job
+gpu_bind,,=...,task to gpu binding options
+gpu_freq,,=...,frequency and voltage of GPUs
+gpus_per_node,,=n,number of GPUs required per allocated node
+gpus_per_socket,,=n,number of GPUs required per allocated socket
+gpus_per_task,,=n,number of GPUs required per spawned task
+mem_per_gpu,,=n,real memory required per allocated GPU
